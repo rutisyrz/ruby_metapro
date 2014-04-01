@@ -21,7 +21,7 @@ class DocumentReader
 	end
 end
 
-# txt files reader
+# txt files reader - subclass
 class PlainTextReader < DocumentReader
 	def self.can_read?(path)
 		/.*\.txt/ =~ path
@@ -41,7 +41,7 @@ class PlainTextReader < DocumentReader
 	end
 end
 
-# yml files reader
+# yml files reader - subclass
 class YAMLReader < DocumentReader
 	def self.can_read?(path)
 		/.*\.yaml/ =~ path
@@ -56,7 +56,7 @@ class YAMLReader < DocumentReader
 	end
 end
 
-# xml files reader
+# xml files reader - subclass
 class XMLReader < DocumentReader
 	def self.can_read?(path)
 		/.*\.xml/ =~ path
