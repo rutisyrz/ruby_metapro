@@ -1,3 +1,7 @@
+# =====================================================
+# Hook - inherited
+# =====================================================
+
 # parent class
 class DocumentReader
 	@reader_classes = []
@@ -71,10 +75,15 @@ class XMLReader < DocumentReader
 	end
 end
 
+# =====================================================
+# Hook - included
+# Hook - at_exit
+# =====================================================
+
 module UsefulMethods
 	module ClassMethods
 		def a_class_method
-			puts "== a_class_method"
+			puts "== called a_class_method"
 		end
 	end
 	
@@ -84,9 +93,8 @@ module UsefulMethods
 	end
 	
 	def an_instance_method
-		puts "== an_instance_method"
+		puts "== called an_instance_method"
 	end
-# Rest of the module deleted...
 end
 
 class Host
